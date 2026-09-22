@@ -7,17 +7,15 @@
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
+    <!-- FontAwesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Meta Pixel Code Base Placeholder -->
+    <!-- Meta Pixel Code Base -->
     <script id="meta-pixel-script">
-        var metaPixelId = localStorage.getItem('bm_pixel_id') || '123456789012345'; // Default fallback or saved Pixel ID
-        
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
         n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -27,7 +25,7 @@
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
         
-        fbq('init', metaPixelId);
+        fbq('init', '123456789012345');
         fbq('track', 'PageView');
     </script>
     <noscript>
@@ -47,7 +45,8 @@
                             goldDark: '#d97706',
                             telegram: '#229ED9',
                             telegramDark: '#0088cc',
-                            green: '#16a34a',
+                            green: '#10b981',
+                            greenDark: '#059669',
                             darkBg: '#090d16',
                             cardBg: '#131b2e',
                             cardBorder: '#1e293b'
@@ -79,7 +78,7 @@
         }
 
         .green-glow {
-            box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
         }
 
         .text-gold-gradient {
@@ -97,10 +96,10 @@
         }
 
         .bg-green-gradient {
-            background: linear-gradient(135deg, #4ade80 0%, #16a34a 50%, #15803d 100%);
+            background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #059669 100%);
         }
 
-        /* Continuous Marquee */
+        /* Marquee Ticker Animation */
         .marquee-container {
             overflow: hidden;
             white-space: nowrap;
@@ -116,6 +115,7 @@
             100% { transform: translateX(-50%); }
         }
 
+        /* Shine Button Animation */
         .shine-btn {
             position: relative;
             overflow: hidden;
@@ -147,42 +147,40 @@
 </head>
 <body class="antialiased selection:bg-brand-gold selection:text-black pb-20 md:pb-0">
 
-    <!-- USER PROVIDED TELEGRAM FAKE-CLICK TRACKING SCRIPT -->
+    <!-- TELEGRAM SINGLE-CLICK & APK DOWNLOAD TRACKING SCRIPT -->
     <script>
-        var isClicked = false; // ट्रैक करने के लिए फ़्लैग वेरिएबल
+        var isClicked = false; // Single click protection flag
         var telegramUrl = "https://t.me/+sgUA9UG2Y_gyYzVl"; 
 
         function trackButtonClick(element) {
-            // अगर यूजर पहली बार क्लिक कर रहा है
             if (!isClicked) {
-                isClicked = true; // क्लिक दर्ज हो गया, अब यह बदल नहीं सकता
+                isClicked = true;
 
-                // 1. Facebook Pixel Events Fire होंगे
+                // Fire Facebook Pixel Custom Events
                 if (typeof fbq !== 'undefined') {
                     fbq('trackCustom', 'TelegramBtnClick'); 
                     fbq('track', 'Subscribe'); 
                 }
 
-                // 2. बटन को विजुअली डिसेबल कर दें (ताकि यूजर को पता चले क्लिक हो चुका है)
+                // Disable clicked element visually
                 var targetBtn = element || document.getElementById('telegramLink');
                 if (targetBtn) {
-                    targetBtn.style.pointerEvents = 'none'; // अतिरिक्त क्लिक पूरी तरह ब्लॉक
-                    targetBtn.style.opacity = '0.7';       // हल्का धुंधला इफेक्ट
+                    targetBtn.style.pointerEvents = 'none';
+                    targetBtn.style.opacity = '0.7';
                 }
 
-                // अन्य सभी टेलीग्राम बटनों को भी डिसेबल कर दें
+                // Disable all Telegram buttons on page
                 var allTelegramBtns = document.querySelectorAll('.telegram-track-btn');
                 allTelegramBtns.forEach(function(b) {
                     b.style.pointerEvents = 'none';
                     b.style.opacity = '0.7';
                 });
 
-                // 3. 300ms के बाद Telegram पर रीडायरेक्ट करें
+                // Redirect to Telegram channel after 300ms
                 setTimeout(function() {
                     window.location.href = telegramUrl;
                 }, 300);
             }
-            // अगर पहले से क्लिक हो चुका है, तो कुछ भी नहीं होगा (इवेंट दोबारा काउंट नहीं होगा)
         }
 
         // APK Download Tracking function with Single Click Protection
@@ -217,7 +215,7 @@
     </script>
 
     <!-- 1. ANNOUNCEMENT TICKER -->
-    <div class="bg-gradient-to-r from-amber-950 via-slate-900 to-sky-950 text-amber-200 text-xs font-semibold py-2 px-4 border-b border-amber-500/30 flex items-center shadow-lg">
+    <div class="bg-gradient-to-r from-amber-950 via-slate-900 to-emerald-950 text-amber-200 text-xs font-semibold py-2 px-4 border-b border-amber-500/30 flex items-center shadow-lg">
         <div class="bg-brand-gold text-slate-950 text-[10px] px-2 py-0.5 rounded font-black uppercase shrink-0 mr-3 animate-pulse">
             LIVE UPDATE
         </div>
@@ -238,7 +236,7 @@
                 
                 <!-- Logo -->
                 <a href="#" class="flex items-center gap-2.5">
-                    <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-amber-500 via-yellow-400 to-amber-600 flex items-center justify-center font-black text-slate-950 text-2xl shadow-lg">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-amber-500 via-yellow-400 to-emerald-500 flex items-center justify-center font-black text-slate-950 text-2xl shadow-lg">
                         B
                     </div>
                     <div class="flex flex-col">
@@ -246,7 +244,7 @@
                             BHARAT <span class="text-brand-gold">MATKA</span>
                             <span class="text-sm">🇮🇳</span>
                         </span>
-                        <span class="text-[10px] tracking-widest text-sky-400 font-bold uppercase -mt-1">Verified Official App</span>
+                        <span class="text-[10px] tracking-widest text-emerald-400 font-bold uppercase -mt-1">Verified Official App</span>
                     </div>
                 </a>
 
@@ -263,7 +261,7 @@
 
                 <!-- Action CTA Buttons -->
                 <div class="hidden sm:flex items-center gap-3">
-                    <!-- Telegram Button with User Script ID & Event -->
+                    <!-- Telegram Button -->
                     <button id="telegramLink" onclick="trackButtonClick(this)" class="telegram-track-btn px-4 py-2.5 rounded-xl bg-brand-telegram hover:bg-brand-telegramDark text-white font-bold text-xs tracking-wider uppercase transition-all shadow-md telegram-glow flex items-center gap-2">
                         <i class="fab fa-telegram text-base"></i> Join Telegram
                     </button>
@@ -509,6 +507,78 @@
                     </div>
                 </div>
 
+                <!-- Market Card 4 -->
+                <div class="bg-slate-900 rounded-2xl p-5 border border-slate-800 hover:border-amber-500/40 transition-all shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-bold text-white text-base">TIME BAZAR</h3>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                                OPEN NOW
+                            </span>
+                        </div>
+                        <div class="text-center py-4 bg-slate-950 rounded-xl border border-slate-800/80 my-2">
+                            <span class="text-2xl font-black text-amber-400 font-mono tracking-widest">247 - 38 - 189</span>
+                        </div>
+                        <div class="flex justify-between text-[11px] text-slate-400 mt-2 font-medium">
+                            <span>Open: 01:00 PM</span>
+                            <span>Close: 02:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 mt-4 pt-3 border-t border-slate-800/60 text-center">
+                        <button onclick="openChartModal('TIME BAZAR', 'Jodi')" class="py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-[11px] font-semibold text-slate-300">Jodi Chart</button>
+                        <button onclick="openChartModal('TIME BAZAR', 'Panel')" class="py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-[11px] font-semibold text-slate-300">Panel Chart</button>
+                        <button onclick="downloadApkTrack(this)" class="apk-download-btn py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-[11px] font-bold text-white">Play</button>
+                    </div>
+                </div>
+
+                <!-- Market Card 5 -->
+                <div class="bg-slate-900 rounded-2xl p-5 border border-slate-800 hover:border-amber-500/40 transition-all shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-bold text-white text-base">MILAN DAY</h3>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                                OPEN NOW
+                            </span>
+                        </div>
+                        <div class="text-center py-4 bg-slate-950 rounded-xl border border-slate-800/80 my-2">
+                            <span class="text-2xl font-black text-amber-400 font-mono tracking-widest">120 - 39 - 289</span>
+                        </div>
+                        <div class="flex justify-between text-[11px] text-slate-400 mt-2 font-medium">
+                            <span>Open: 03:00 PM</span>
+                            <span>Close: 05:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 mt-4 pt-3 border-t border-slate-800/60 text-center">
+                        <button onclick="openChartModal('MILAN DAY', 'Jodi')" class="py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-[11px] font-semibold text-slate-300">Jodi Chart</button>
+                        <button onclick="openChartModal('MILAN DAY', 'Panel')" class="py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-[11px] font-semibold text-slate-300">Panel Chart</button>
+                        <button onclick="downloadApkTrack(this)" class="apk-download-btn py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-[11px] font-bold text-white">Play</button>
+                    </div>
+                </div>
+
+                <!-- Market Card 6 -->
+                <div class="bg-slate-900 rounded-2xl p-5 border border-slate-800 hover:border-amber-500/40 transition-all shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-bold text-white text-base">RAJDHANI NIGHT</h3>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                                OPEN NOW
+                            </span>
+                        </div>
+                        <div class="text-center py-4 bg-slate-950 rounded-xl border border-slate-800/80 my-2">
+                            <span class="text-2xl font-black text-amber-400 font-mono tracking-widest">567 - 89 - 180</span>
+                        </div>
+                        <div class="flex justify-between text-[11px] text-slate-400 mt-2 font-medium">
+                            <span>Open: 09:30 PM</span>
+                            <span>Close: 11:45 PM</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 mt-4 pt-3 border-t border-slate-800/60 text-center">
+                        <button onclick="openChartModal('RAJDHANI NIGHT', 'Jodi')" class="py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-[11px] font-semibold text-slate-300">Jodi Chart</button>
+                        <button onclick="openChartModal('RAJDHANI NIGHT', 'Panel')" class="py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-[11px] font-semibold text-slate-300">Panel Chart</button>
+                        <button onclick="downloadApkTrack(this)" class="apk-download-btn py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-[11px] font-bold text-white">Play</button>
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -621,28 +691,28 @@
         </div>
     </section>
 
-    <!-- 8. META PIXEL CONFIGURATOR & FOOTER -->
+    <!-- 8. CLEAN FOOTER (META PIXEL WIDGET BOX REMOVED) -->
     <footer class="bg-slate-950 text-slate-400 text-xs py-10 border-t border-slate-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
             
-            <!-- Meta Pixel ID Configurator Box -->
-            <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 max-w-xl mx-auto text-center space-y-3">
-                <div class="flex items-center justify-center gap-2 text-sky-400 font-bold text-xs uppercase tracking-wider">
-                    <i class="fab fa-facebook text-base"></i> Meta Pixel Tracking Configurator
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 pb-6 border-b border-slate-900">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-amber-500 to-emerald-500 flex items-center justify-center font-black text-slate-950 text-base">
+                        B
+                    </div>
+                    <span class="text-lg font-black text-white">BHARAT <span class="text-brand-gold">MATKA</span></span>
                 </div>
-                <p class="text-[11px] text-slate-400">Set your Meta Pixel ID below to test event tracking (`TelegramBtnClick`, `Subscribe`, `Lead`):</p>
-                <div class="flex items-center justify-center gap-2">
-                    <input type="text" id="pixelInput" placeholder="Enter Meta Pixel ID" class="px-4 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-sky-500 w-60">
-                    <button onclick="savePixelId()" class="px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs">
-                        Save Pixel ID
-                    </button>
+                <div class="flex items-center gap-6 text-slate-400 text-xs">
+                    <a href="#hero" class="hover:text-amber-400">Home</a>
+                    <a href="#telegram-section" class="hover:text-sky-400">Telegram</a>
+                    <a href="#live-results" class="hover:text-amber-400">Results</a>
+                    <a href="#game-rates" class="hover:text-amber-400">Payout Rates</a>
                 </div>
-                <div id="pixelStatus" class="text-[10px] text-emerald-400 font-medium hidden">Pixel ID Updated Successfully!</div>
             </div>
 
             <div class="text-center text-slate-500 text-[11px] space-y-2">
                 <p>&copy; 2026 Bharat Matka Official. All rights reserved.</p>
-                <p>Disclaimer: This app is intended strictly for educational and entertainment purposes.</p>
+                <p>Disclaimer: This platform is intended strictly for educational and entertainment purposes.</p>
             </div>
 
         </div>
@@ -651,7 +721,7 @@
     <!-- 9. STICKY BOTTOM FLOATING BAR WITH DUAL BUTTONS FOR MOBILE -->
     <div class="fixed bottom-0 left-0 right-0 z-50 bg-slate-950/98 border-t border-slate-800 p-3 shadow-2xl backdrop-blur-md sm:hidden">
         <div class="grid grid-cols-2 gap-3 max-w-md mx-auto">
-            <!-- Telegram Button using user script -->
+            <!-- Telegram Button using single-click protection script -->
             <button onclick="trackButtonClick(this)" class="telegram-track-btn w-full py-3 rounded-xl bg-brand-telegram text-white font-extrabold text-xs uppercase tracking-wider shadow-lg telegram-glow flex items-center justify-center gap-2">
                 <i class="fab fa-telegram text-base"></i> Join Telegram
             </button>
@@ -683,7 +753,7 @@
                         </tr>
                     </thead>
                     <tbody id="chartTableBody" class="font-mono text-slate-300">
-                        <!-- Populated by JS -->
+                        <!-- Populated dynamically -->
                     </tbody>
                 </table>
             </div>
@@ -738,21 +808,8 @@
             document.getElementById('chartModal').classList.add('hidden');
         }
 
-        function savePixelId() {
-            const val = document.getElementById('pixelInput').value.trim();
-            if (val) {
-                localStorage.setItem('bm_pixel_id', val);
-                document.getElementById('pixelStatus').classList.remove('hidden');
-                setTimeout(() => { location.reload(); }, 1000);
-            }
-        }
-
         window.onload = function() {
             calculatePayout();
-            const saved = localStorage.getItem('bm_pixel_id');
-            if (saved) {
-                document.getElementById('pixelInput').value = saved;
-            }
         }
     </script>
 </body>
