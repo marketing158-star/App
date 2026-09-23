@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bharat Matka - Official Online Play Platform</title>
     
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2132346007368116');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2132346007368116&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -45,7 +63,7 @@
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-950 pb-16 md:pb-0">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-950 pb-20 md:pb-0">
 
     <!-- 1. HEADER / NAVBAR -->
     <header class="sticky top-0 z-40 bg-slate-950/80 backdrop-blur-lg border-b border-slate-800/80">
@@ -70,8 +88,8 @@
                     <a href="#how-to-install" class="hover:text-amber-400 transition-colors">How to Install</a>
                 </nav>
 
-                <!-- Desktop CTA -->
-                <div class="hidden md:flex items-center">
+                <!-- Desktop CTA Button -->
+                <div class="hidden md:flex items-center gap-3">
                     <button onclick="downloadApkTrack(this)" class="apk-download-btn px-6 py-2.5 rounded-xl bg-gold-gradient text-slate-950 font-extrabold text-xs uppercase tracking-wider hover:opacity-90 transition-all shadow-lg shadow-amber-500/20 flex items-center gap-2">
                         <i class="fas fa-download"></i> Download App
                     </button>
@@ -90,6 +108,7 @@
             <a href="#markets" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold text-slate-300 hover:text-amber-400">Markets</a>
             <a href="#game-rates" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold text-slate-300 hover:text-amber-400">Game Rates</a>
             <a href="#how-to-install" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold text-slate-300 hover:text-amber-400">How to Install</a>
+            
             <button onclick="downloadApkTrack(this); toggleMobileMenu();" class="apk-download-btn w-full py-3 rounded-xl bg-gold-gradient text-slate-950 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
                 <i class="fas fa-download"></i> Download Official APK
             </button>
@@ -116,8 +135,9 @@
                 Play Kalyan, Main Bazar, Rajdhani, Milan &amp; Starline markets with maximum payouts, 100% security, and instant automated withdrawal support.
             </p>
 
-            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
-                <button onclick="downloadApkTrack(this)" class="apk-download-btn w-full sm:w-auto px-8 py-4 rounded-xl bg-gold-gradient text-slate-950 font-black text-sm uppercase tracking-wider hover:opacity-95 transition-all shadow-xl shadow-amber-500/20 flex items-center justify-center gap-3">
+            <!-- Action Button -->
+            <div class="mt-8 flex justify-center max-w-md mx-auto">
+                <button onclick="downloadApkTrack(this)" class="apk-download-btn w-full sm:w-auto px-10 py-4 rounded-xl bg-gold-gradient text-slate-950 font-black text-sm uppercase tracking-wider hover:opacity-95 transition-all shadow-xl shadow-amber-500/20 flex items-center justify-center gap-3">
                     <i class="fas fa-download text-lg"></i> Download Android App
                 </button>
             </div>
@@ -362,28 +382,24 @@
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-                <!-- Rate Card 1 -->
                 <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 text-center hover:border-amber-500/30 transition-all">
                     <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Single Digit</div>
                     <div class="text-2xl font-black text-amber-400 my-1">10 : 95</div>
                     <div class="text-[11px] text-emerald-400 font-medium">₹10 = ₹95</div>
                 </div>
 
-                <!-- Rate Card 2 -->
                 <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 text-center hover:border-amber-500/30 transition-all">
                     <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Jodi Digit</div>
                     <div class="text-2xl font-black text-amber-400 my-1">10 : 950</div>
                     <div class="text-[11px] text-emerald-400 font-medium">₹10 = ₹950</div>
                 </div>
 
-                <!-- Rate Card 3 -->
                 <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 text-center hover:border-amber-500/30 transition-all">
                     <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Single Pana</div>
                     <div class="text-2xl font-black text-amber-400 my-1">10 : 1,500</div>
                     <div class="text-[11px] text-emerald-400 font-medium">₹10 = ₹1,500</div>
                 </div>
 
-                <!-- Rate Card 4 -->
                 <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 text-center hover:border-amber-500/30 transition-all">
                     <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Double Pana</div>
                     <div class="text-2xl font-black text-amber-400 my-1">10 : 3,000</div>
@@ -403,21 +419,18 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Step 1 -->
                 <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 relative space-y-3">
                     <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 font-black text-lg flex items-center justify-center">1</div>
                     <h3 class="font-bold text-white text-base">Download APK</h3>
                     <p class="text-xs text-slate-400 leading-relaxed">Click on the "Download APK" button above to get the official secure installation file directly.</p>
                 </div>
 
-                <!-- Step 2 -->
                 <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 relative space-y-3">
                     <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 font-black text-lg flex items-center justify-center">2</div>
                     <h3 class="font-bold text-white text-base">Allow Unknown Sources</h3>
                     <p class="text-xs text-slate-400 leading-relaxed">Go to Phone Settings &gt; Security &gt; Enable "Install from Unknown Sources" for your browser.</p>
                 </div>
 
-                <!-- Step 3 -->
                 <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 relative space-y-3">
                     <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 font-black text-lg flex items-center justify-center">3</div>
                     <h3 class="font-bold text-white text-base">Install &amp; Play</h3>
@@ -438,73 +451,63 @@
     <!-- STICKY MOBILE BOTTOM BAR -->
     <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-md border-t border-slate-800 p-3">
         <button onclick="downloadApkTrack(this)" class="apk-download-btn w-full py-3 rounded-xl bg-gold-gradient text-slate-950 font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg">
-            <i class="fas fa-download text-base"></i> Download APK
+            <i class="fas fa-download text-base"></i> Download Official APK
         </button>
     </div>
 
-    <!-- TOAST NOTIFICATION CONTAINER -->
-    <div id="toastNotification" class="fixed top-5 right-5 z-50 transform translate-x-full transition-transform duration-300 bg-emerald-600 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 text-xs font-bold">
-        <i class="fas fa-arrow-down-long animate-bounce text-base"></i>
-        <span>Download starting... Please check your browser downloads!</span>
-    </div>
-
     <!-- CHART MODAL -->
-    <div id="chartModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-md w-full p-6 relative space-y-4">
-            <button onclick="closeChartModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg">
-                <i class="fas fa-times"></i>
-            </button>
-            <h3 id="modalTitle" class="text-lg font-bold text-amber-400">Chart Information</h3>
-            <div id="modalBody" class="text-xs text-slate-300 space-y-2">
-                <p>Loading market chart details...</p>
+    <div id="chartModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-lg p-6 shadow-2xl relative">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                <h3 id="modalTitle" class="text-lg font-bold text-amber-400">Chart Modal</h3>
+                <button onclick="closeChartModal()" class="text-slate-400 hover:text-white p-1">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
             </div>
-            <div class="pt-2 flex justify-end">
-                <button onclick="closeChartModal()" class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-xs font-semibold hover:bg-slate-700">Close</button>
+            <div id="modalBody" class="py-6 text-sm text-slate-300 text-center">
+                Loading chart records...
+            </div>
+            <div class="flex justify-end pt-4 border-t border-slate-800">
+                <button onclick="closeChartModal()" class="px-5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200">
+                    Close
+                </button>
             </div>
         </div>
     </div>
 
-    <!-- HELPER JAVASCRIPT FUNCTIONS -->
+    <!-- JAVASCRIPT LOGIC -->
     <script>
+        // Toggle mobile navigation menu
         function toggleMobileMenu() {
-            var menu = document.getElementById('mobileMenu');
-            if (menu) menu.classList.toggle('hidden');
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
         }
 
-        function showToastNotification() {
-            var toast = document.getElementById('toastNotification');
-            if (toast) {
-                toast.classList.remove('translate-x-full');
-                setTimeout(function() {
-                    toast.classList.add('translate-x-full');
-                }, 4000);
+        // Track APK download & handle direct download link
+        function downloadApkTrack(element) {
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead');
             }
+            // Replace with the direct link to your APK file
+            const apkDownloadUrl = 'https://example.com/bharatmatka.apk';
+            window.location.href = apkDownloadUrl;
         }
 
-        function downloadApkTrack(btn) {
-            showToastNotification();
-            // Official APK Link
-            window.location.href = "https://bharatmatkaoriginal.com/downloads/BharatMatka.apk";
+        // Open Chart Modal
+        function openChartModal(marketName, chartType) {
+            const modal = document.getElementById('chartModal');
+            const title = document.getElementById('modalTitle');
+            const body = document.getElementById('modalBody');
+
+            title.innerText = `${marketName} - ${chartType} Chart`;
+            body.innerHTML = `<p class="text-slate-400">Fetching latest ${chartType.toLowerCase()} records for <strong class="text-white">${marketName}</strong>...</p>`;
+            
+            modal.classList.remove('hidden');
         }
 
-        function openChartModal(market, type) {
-            var modal = document.getElementById('chartModal');
-            var title = document.getElementById('modalTitle');
-            var body = document.getElementById('modalBody');
-            if (modal && title && body) {
-                title.innerText = market + " - " + type + " Chart";
-                body.innerHTML = "<p class='text-slate-300'>Access real-time " + type.toLowerCase() + " charts and historical archives directly inside the official app.</p><p class='text-amber-400 font-bold mt-2'>Download the APK to unlock full records!</p>";
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-            }
-        }
-
+        // Close Chart Modal
         function closeChartModal() {
-            var modal = document.getElementById('chartModal');
-            if (modal) {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-            }
+            document.getElementById('chartModal').classList.add('hidden');
         }
     </script>
 </body>
